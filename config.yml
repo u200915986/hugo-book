@@ -2,7 +2,7 @@
 
 baseURL: https://u200915986.github.io/
 title: Sau Wai
-theme: book
+theme: hugo-book
 
 
 # Book configuration
