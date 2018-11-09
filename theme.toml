@@ -3,7 +3,7 @@
 
 name = "book"
 license = "MIT"
-licenselink = "https://github.com/alex-shpak/hugo-book/blob/master/LICENSE"
+licenselink = "https://www.littlegroup.club/LICENSE"
 description = "Hugo documentation theme as simple as plain book"
 homepage = "https://www.littlegroup.club/"
 tags = ["responsive", "clean", "documentation", "docs", "flexbox"]

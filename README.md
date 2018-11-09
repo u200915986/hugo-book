@@ -1,7 +1,7 @@
 # Hugo Book Theme
 ### [Hugo](https://gohugo.io) documentation theme as simple as plain book
 
-![Screenshot](https://github.com/alex-shpak/hugo-book/blob/master/images/screenshot.png)
+![Screenshot](https://github.com/u200915986/u2009159861.github.io/blob/master/images/screenshot.png)
 
 
 ## Features
@@ -15,7 +15,7 @@
 ## Installation
 Navigate to your hugo website root and run:
 ```
-git submodule add https://github.com/alex-shpak/hugo-book themes/book
+git submodule add https://github.com/u200915986/u2009159861.github.iok themes/book
 ```
 
 Then run hugo (or set `theme: book` in configuration file)
@@ -30,7 +30,7 @@ By default theme will render pages from `content/docs` section as menu in a tree
 You can set `title` and `weight` in front matter of pages to adjust order and titles in menu.
 
 ### Leaf bundle menu
-You can also use leaf bundle and content of it's `index.md` as 
+You can also use leaf bundle and content of it's `index.md` as
 menu.
 
 Given you have this file structure
@@ -54,8 +54,8 @@ headless: true
 
 And Enable it by settings `BookMenuBundle: /docs/menu` in Site configuration
 
-- [Example menu](https://github.com/alex-shpak/hugo-book/blob/master/exampleSite/content/menu/index.md)
-- [Example config file](https://github.com/alex-shpak/hugo-book/blob/master/exampleSite/config.yml)
+- [Example menu](https://github.com/u200915986/u2009159861.github.io/blob/master/exampleSite/content/menu/index.md)
+- [Example config file](https://github.com/u200915986/u2009159861.github.io/blob/master/exampleSite/config.yml)
 - [Leaf bundles](https://gohugo.io/content-management/page-bundles/)
 
 

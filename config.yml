@@ -1,6 +1,6 @@
 # hugo server --themesDir ...
 
-baseURL: https://example.com
+baseURL: https://www.littlegroup.club
 title: SauWai
 theme: book
 
@@ -13,8 +13,8 @@ params:
 
   # Set bundle to render side menu
   # if not specified file structure and weights will be used
-  BookMenuBundle: /menu
+  BookMenuBundle: /docs/menu
 
   # specify section of content to render as menu
   # if bookMenuBundle is not set, 'docs' is value by default
-  BookSection: docs
+  BookSection: /docs
