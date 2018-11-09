@@ -1,8 +1,8 @@
 # hugo server --themesDir ...
 
-baseURL: https://u200915986.github.io/
-title: Sau Wai
-theme: book
+baseURL: "https://u200915986.github.io/"
+title: "Sau Wai"
+theme: "book"
 
 
 # Book configuration
