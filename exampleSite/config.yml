@@ -1,8 +1,8 @@
 # hugo server --themesDir ...
 
-baseURL: https://example.com
-title: Hugo Book
-theme: hugo-book
+baseURL: https://u200915986.github.io
+title: Sau Wai
+theme: book
 
 # Book configuration
 disablePathToLower: true
@@ -13,7 +13,7 @@ params:
 
   # Set bundle to render side menu
   # if not specified file structure and weights will be used
-  BookMenuBundle: /menu  
+  BookMenuBundle: /menu
 
   # specify section of content to render as menu
   # if bookMenuBundle is not set, 'docs' is value by default
