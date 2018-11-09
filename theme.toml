@@ -3,13 +3,13 @@
 
 name = "book"
 license = "MIT"
-licenselink = "https://www.littlegroup.club/LICENSE"
+licenselink = "https://u200915986.github.io//LICENSE"
 description = "Hugo documentation theme as simple as plain book"
-homepage = "https://www.littlegroup.club/"
+homepage = "https://u200915986.github.io//"
 tags = ["responsive", "clean", "documentation", "docs", "flexbox"]
 features = []
 min_version = "0.43"
 
 [author]
   name = "Sau Wai"
-  homepage = "https://www.littlegroup.club"
+  homepage = "https://u200915986.github.io/"
