@@ -1,10 +1,9 @@
 # hugo server --themesDir ...
 
 baseURL: https://u200915986.github.io/
-title: Sau Wai
+title: SauWai
 theme: book
-canonifyurls: true
-
+publishDir: content
 
 # Book configuration
 disablePathToLower: true
