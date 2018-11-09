@@ -3,7 +3,6 @@
 baseURL: https://u200915986.github.io/
 title: SauWai
 theme: book
-publishDir: content
 
 # Book configuration
 disablePathToLower: true
