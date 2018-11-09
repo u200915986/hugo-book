@@ -3,6 +3,7 @@
 baseURL: "https://u200915986.github.io/"
 title: "Sau Wai"
 theme: "book"
+canonifyurls: "true"
 
 
 # Book configuration
