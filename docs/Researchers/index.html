@@ -70,7 +70,22 @@
 
 <p>. 居住证数据</p>
 </article>
-      
+      <div id="gitalk-container"></div>
+<link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
+<script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+    <script>
+const gitalk = new Gitalk({
+clientID: '99e828a4ea1d93e1692b',
+clientSecret: '00601a9ccb7960530d8cd7f97827f96aa14d9e8d',
+repo: 'u200915986.github.io',
+owner: 'u200915986',
+admin: 'u200915986',
+id: location.pathname,      
+distractionFreeMode: false  
+})
+
+gitalk.render('gitalk-container')
+    </script>
     </div>
 
     
