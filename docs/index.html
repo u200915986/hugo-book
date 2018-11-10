@@ -54,7 +54,22 @@
 <strong>
     Docs</strong>
       </header>
-      <article class="markdown"></article>    
+      <article class="markdown"></article>
+      <div id="container"></div>
+         <link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">
+         <script src="https://imsun.github.io/gitment/dist/gitment.browser.js"></script>
+         <script>
+         var gitment = new Gitment({
+           id: '', 
+           owner: 'u200915986',
+           repo: 'u200915986.github.io',
+           oauth: {
+             client_id: '99e828a4ea1d93e1692b',
+             client_secret: '00601a9ccb7960530d8cd7f97827f96aa14d9e8d',
+           },
+         })
+         gitment.render('container')
+         </script>   
     </div>
 
     
