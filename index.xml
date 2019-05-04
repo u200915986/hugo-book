@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Index on Sau Wai</title>
+    <title>Index on </title>
     <link>https://u200915986.github.io/</link>
-    <description>Recent content in Index on Sau Wai</description>
+    <description>Recent content in Index on </description>
     <generator>Hugo -- gohugo.io</generator>
     
 	<atom:link href="https://u200915986.github.io/index.xml" rel="self" type="application/rss+xml" />
@@ -11,10 +11,10 @@
     
     <item>
       <title></title>
-      <link>https://u200915986.github.io/docs/Codes/</link>
+      <link>https://u200915986.github.io/docs/codes/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://u200915986.github.io/docs/Codes/</guid>
+      <guid>https://u200915986.github.io/docs/codes/</guid>
       <description>网站  . ReplicationWiki，提供了许多著名期刊发表论文的源代码。
  因果识别方法  DID .andrewpwheeler
 RD . Matias D. Cattaneo
@@ -32,10 +32,10 @@ RD . Matias D. Cattaneo
     
     <item>
       <title></title>
-      <link>https://u200915986.github.io/docs/DateSets/</link>
+      <link>https://u200915986.github.io/docs/datesets/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://u200915986.github.io/docs/DateSets/</guid>
+      <guid>https://u200915986.github.io/docs/datesets/</guid>
       <description>  微观数据集  公开大样本调查数据 .CHNS,1989-2015
 .CFPS,2010-2016
 .CGSS,2003-2016
@@ -65,10 +65,10 @@ RD . Matias D. Cattaneo
     
     <item>
       <title></title>
-      <link>https://u200915986.github.io/docs/Researchers/</link>
+      <link>https://u200915986.github.io/docs/researchers/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://u200915986.github.io/docs/Researchers/</guid>
+      <guid>https://u200915986.github.io/docs/researchers/</guid>
       <description>个人网站  . MEDevEcon，该网站提供了大量 微观数据、和宏观数据、以及Stata代码
 . LiuKai
 .[]
@@ -77,10 +77,10 @@ RD . Matias D. Cattaneo
     
     <item>
       <title></title>
-      <link>https://u200915986.github.io/docs/Tools/</link>
+      <link>https://u200915986.github.io/docs/tools/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://u200915986.github.io/docs/Tools/</guid>
+      <guid>https://u200915986.github.io/docs/tools/</guid>
       <description>资源  . 教育邮箱优惠
 . 在线批量修改图片
 . CFPS
