@@ -135,7 +135,19 @@ RD . Matias D. Cattaneo
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://u200915986.github.io/docs/client/</guid>
-      <description>微观数据集  &amp;gt;### **网站** . [ReplicationWiki](http://replication.uni-goettingen.de/wiki/index.php/Main_Page)，提供了许多著名期刊发表论文的源代码。 *** &amp;gt;### **因果识别方法** #### **DID** .[andrewpwheeler](https://andrewpwheeler.wordpress.com/2016/05/12/some-stata-notes-difference-in-difference-models-and-postestimation-commands/) #### **RD** . [Matias D. Cattaneo](https://sites.google.com/site/matiasdcattaneo/publications) . [RD Software Packages](https://sites.google.com/site/rdpackages/home) . 2018开发区目录数据 . 高铁数据 . 灯光数据 *** &amp;gt;### **估计方法** .[**reghdfe**]( http://scorreia.com/software/reghdfe/) -- linear and instrumental-variable/gmm regression absorbing multiple levels of fixed effects .空间计量[**xsmle**]()--spatial panel data models .[**spregxt**]-- spatial panel econometric regression models: stata module toolkit *** &amp;gt;### **Paper Writing** . [How to Write an Economics Paper](http://faculty.chicagobooth.edu/john.cochrane/research/papers/phd_paper_writing.pdf) .</description>
+      <description>网站  . ReplicationWiki，提供了许多著名期刊发表论文的源代码。
+ 因果识别方法  DID .andrewpwheeler
+RD . Matias D. Cattaneo
+. RD Software Packages
+. 2018开发区目录数据
+. 高铁数据
+. 灯光数据
+ 估计方法  .reghdfe &amp;ndash; linear and instrumental-variable/gmm regression absorbing multiple levels of fixed effects
+.空间计量[xsmle]()&amp;ndash;spatial panel data models
+.[spregxt]&amp;ndash; spatial panel econometric regression models: stata module toolkit
+ Paper Writing  . How to Write an Economics Paper
+.Building a Model
+.How to Pick a Topic</description>
     </item>
     
   </channel>
