@@ -1,0 +1,192 @@
+<!DOCTYPE html>    
+<html>    
+<head>   
+    <!-- 页面信息的编码 -->
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />    
+    <meta name="viewport" content="initial-scale=1.0, user-scalable=no" />    
+	<script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=F0i6SrLmHquLVNLCqpExxPrj8mWVdFwx"></script>
+	<script type="text/javascript" src="http://api.map.baidu.com/library/DrawingManager/1.4/src/DrawingManager_min.js"></script>
+	<link rel="stylesheet" href="http://api.map.baidu.com/library/DrawingManager/1.4/src/DrawingManager_min.css" />
+
+    <!-- 代码的CSS部分 -->
+	<style type="text/css">    
+	    body{width: 100%;height: 100%;margin:0;font-family:"微软雅黑";}    
+		#map {width: 100%; height:820px;border:2px solid red;overflow:hidden;}    
+		#data{height:130px;border:2px solid red;}
+	</style>
+
+</head>    
+<body>    
+    <!-- 本次的html框架分为3部分 1.地图 2.按钮 3.数据区 -->
+    <!-- 地图布局 -->
+    <div id="map"></div>
+
+    <!-- 按钮布局 -->
+    <div class="letterarea" >    
+        <input type="button" value="绘制多边形" onclick="draw(BMAP_DRAWING_POLYGON)" />    
+        <input type="button" value="获取经纬度" onclick="getPoint()"/>             
+        <input type="button" value="清除多边形" onclick="clearAll()"/> 
+ 
+    <!-- 显示区域 -->
+    <div id="data"></div>
+    
+</body>    
+</html>
+
+<script type="text/javascript">    
+    // 第一部分***********************最先定义$函数
+    function $(id){
+    	return document.getElementById(id);    
+	}
+	
+	// 第二部分*********************地图的基本功能**********************
+    var map = new BMap.Map('map');    
+    var poi = new BMap.Point(121.587959,29.277325);    
+    map.centerAndZoom(poi, 16);   
+    map.enableScrollWheelZoom();
+
+    var overlays = [];    
+    // 完成的数组
+    var overlaycomplete = function(e){    
+        // 向里面进行添加
+        overlays.push(e.overlay);     
+    }; 
+
+    // 第三部分*********************鼠标绘制多边形的演示******************
+    // 填充的样式 
+    var styleOptions = {    
+        strokeColor:"#43a34c", 
+        fillColor:"#43a34c", 
+        fillOpacity: 0.3,    
+        strokeWeight:2, 
+        strokeOpacity:0.5 
+    }           
+    //实例化鼠标绘制工具    
+    var drawingManager = new BMapLib.DrawingManager(map, {    
+        enableDrawingTool: true, 
+        drawingToolOptions: {    
+            anchor: BMAP_ANCHOR_TOP_RIGHT,   
+            offset: new BMap.Size(5, 5),    
+        },
+        polygonOptions: styleOptions,  
+    });   
+    //添加鼠标绘制工具监听事件，用于获取绘制结果    
+    drawingManager.addEventListener('overlaycomplete', overlaycomplete);    
+    
+    // 第四部分*****************绘制多边形命令********************
+    function draw(type){    
+    	// 开启
+        drawingManager.open();     
+        // 模型选择
+        drawingManager.setDrawingMode(type);    
+    }
+
+
+    // 第五部分****************获取经纬度信息*********************
+    function getPoint(){    
+        $("data").innerHTML='';
+        for(var i = 0; i < overlays.length; i++){    
+            var overlay=overlays[i].getPath();    
+            $("data").innerHTML=$("data").innerHTML+'经纬度数组'+'<br>';
+            for(var j = 0; j < overlay.length; j++){    
+                var grid =overlay[j];    
+                $("data").innerHTML=$("data").innerHTML+"["+grid.lng+","+grid.lat+"],";
+            }    
+        }
+    }
+
+    // 第六部分******************清除多边形的命令*******************
+    function clearAll() {    
+        for(var i = 0; i < overlays.length; i++){    
+            map.removeOverlay(overlays[i]);    
+        }    
+        overlays.length = 0       
+    }
+
+    //第七部分******************鼠标右键弹出经纬度的信息**********************
+    map.addEventListener("rightclick",function(e){    
+        // confirm进行弹出窗口的按钮
+        if(confirm(e.point.lng + "," + e.point.lat)){    
+            // 这里是一个div的区域
+            $("data").innerHTML=$("data").innerHTML+"["+e.point.lng+","+e.point.lat+"]";
+            }    
+    });
+
+
+   // 定义一个控件类,即function
+    function ZoomControl() {
+        this.defaultAnchor = BMAP_ANCHOR_TOP_LEFT;
+        this.defaultOffset = new BMap.Size(10, 10);
+    }
+
+    // 通过JavaScript的prototype属性继承于BMap.Control
+    ZoomControl.prototype = new BMap.Control();
+
+    // 自定义控件必须实现自己的initialize方法,并且将控件的DOM元素返回
+    // 在本方法中创建个div元素作为控件的容器,并将其添加到地图容器中
+    ZoomControl.prototype.initialize = function(map){
+      // 创建一个DOM元素
+      var div = document.createElement("div");
+      div.innerHTML = '<div id="r-result">搜索地址:<input type="text" id="suggestId" size="20" value="百度" style="width:150px;" /></div><div id="searchResultPanel" style="border:1px solid #C0C0C0;width:150px;height:auto; display:none;"></div>';
+
+      // 添加DOM元素到地图中
+      map.getContainer().appendChild(div);
+      // 将DOM元素返回
+      return div;
+    }
+
+    // 创建控件
+    var myZoomCtrl = new ZoomControl();
+    // 添加到地图当中
+    map.addControl(myZoomCtrl);
+
+
+    var ac = new BMap.Autocomplete(    //建立一个自动完成的对象
+        {"input" : "suggestId"
+        ,"location" : map
+    });
+
+    ac.addEventListener("onhighlight", function(e) {  //鼠标放在下拉列表上的事件
+    var str = "";
+        var _value = e.fromitem.value;
+        var value = "";
+        if (e.fromitem.index > -1) {
+            value = _value.province +  _value.city +  _value.district +  _value.street +  _value.business;
+        }
+        str = "FromItem<br />index = " + e.fromitem.index + "<br />value = " + value;
+
+        value = "";
+        if (e.toitem.index > -1) {
+            _value = e.toitem.value;
+            value = _value.province +  _value.city +  _value.district +  _value.street +  _value.business;
+        }
+        str += "<br />ToItem<br />index = " + e.toitem.index + "<br />value = " + value;
+        $("searchResultPanel").innerHTML = str;
+    });
+
+    var myValue;
+    ac.addEventListener("onconfirm", function(e) {    //鼠标点击下拉列表后的事件
+    var _value = e.item.value;
+        myValue = _value.province +  _value.city +  _value.district +  _value.street +  _value.business;
+        $("searchResultPanel").innerHTML ="onconfirm<br />index = " + e.item.index + "<br />myValue = " + myValue;
+
+        setPlace();
+    });
+
+    function setPlace(){
+        map.clearOverlays();    //清除地图上所有覆盖物
+        function myFun(){
+            var pp = local.getResults().getPoi(0).point;    //获取第一个智能搜索的结果
+            map.centerAndZoom(pp, 14);
+            map.addOverlay(new BMap.Marker(pp));    //添加标注
+        }
+        var local = new BMap.LocalSearch(map, { //智能搜索
+          onSearchComplete: myFun
+        });
+        local.search(myValue);
+    }
+
+
+
+
+</script>    
